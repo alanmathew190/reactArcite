@@ -1,1 +1,1 @@
-learning react at ARCITE
+learning react at ARCITE.
