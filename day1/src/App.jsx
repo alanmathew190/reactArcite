@@ -1,15 +1,18 @@
-// import { useState } from 'react'
 import './App.css'
+import Greeting1 from './components/Greeting'
+
 
 function App() {
-  let name = "Alan"
-
+  let name = "Alan J Mathew"
+  let age = 21;
+  let person = {
+    name1: "John",
+    age1: 40,
+    place1:"Kollam"
+  }
   return (
     <>
-      <h1>Hello { name }</h1>
-      <div>
-        Welcome to react Tutorials
-      </div>
+      <Greeting1 name={name} />
     </>
   )
 }
