@@ -2,10 +2,14 @@
 import './App.css'
 
 function App() {
+  let name = "Alan"
 
   return (
     <>
-      <h1>Hello Alan</h1>
+      <h1>Hello { name }</h1>
+      <div>
+        Welcome to react Tutorials
+      </div>
     </>
   )
 }
