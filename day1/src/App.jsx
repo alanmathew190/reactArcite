@@ -1,9 +1,11 @@
 import './App.css'
+import DefaultValue from './components/DefaultValue';
 import Greeting1 from './components/Greeting'
 
 
 function App() {
   let name = "Alan J Mathew"
+  let name2 = "Alan";
   let age = 21;
   let person = {
     name1: "John",
@@ -13,6 +15,7 @@ function App() {
   return (
     <>
       <Greeting1 name={name} />
+      <DefaultValue name2={person.age } />
     </>
   )
 }

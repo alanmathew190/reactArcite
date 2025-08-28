@@ -1,0 +1,19 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.one{
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  margin: auto ;
+}
+
+button{
+  background-color: blue;
+  color: white;
+  width: 50px;
+}
