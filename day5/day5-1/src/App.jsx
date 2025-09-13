@@ -1,23 +1,27 @@
 import React, { useState } from "react";
-import "./App.css";
 import AddTasks from "./components/AddTasks";
 import TaskList from "./components/TaskList";
 import CompletedTaskList from "./components/CompletedTaskList";
-
+import "./App.css";
 
 function App() {
   const [tasks, setTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
-  const AddTask = (task) => {
-    setTasks([...tasks, task])
-  }
+  const [showCompleted, setShowCompleted] = useState(false);
 
-  const DeleteTask = (index) => {
-    const newTasks = tasks.filter((_, i) => i != index)
-    setTasks(newTasks)
-  }
+  // add new task
+  const addTask = (task) => {
+    setTasks([...tasks, task]);
+  };
 
-    const completeTask = (index) => {
+  // delete active task
+  const deleteTask = (index) => {
+    const newTasks = tasks.filter((_, i) => i !== index);
+    setTasks(newTasks);
+  };
+
+  // mark active task as completed
+  const completeTask = (index) => {
     const taskToComplete = tasks[index];
     const newTasks = tasks.filter((_, i) => i !== index);
     setTasks(newTasks);
@@ -25,14 +29,32 @@ function App() {
   };
 
   return (
-    <>
-      <h1>Todo List App</h1>
-      <AddTasks onAdd={AddTask} />
-      <div className="app">
-      <TaskList tasks={tasks} onDelete={DeleteTask} onComplete={completeTask} />
-      <CompletedTaskList tasks={completedTasks} />
+    <div className="app">
+      <h1>To-Do List</h1>
+      <AddTasks onAdd={addTask} />
+
+      {/* toggle button */}
+      <button
+        onClick={() => setShowCompleted(!showCompleted)}
+        style={{ marginBottom: "20px" }}
+      >
+        {showCompleted ? "Hide Completed Tasks" : "Show Completed Tasks"}
+      </button>
+
+      {!showCompleted && (
+        <>
+          <h2>Active Tasks</h2>
+          <TaskList tasks={tasks} onDelete={deleteTask} onComplete={completeTask} />
+        </>
+      )}
+
+      {showCompleted && (
+        <>
+          <h2>Completed Tasks</h2>
+          <CompletedTaskList tasks={completedTasks} />
+        </>
+      )}
     </div>
-    </>
   );
 }
 

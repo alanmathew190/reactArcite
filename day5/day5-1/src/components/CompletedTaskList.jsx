@@ -1,22 +1,15 @@
 import React from "react";
 
-function TaskList({ tasks, onDelete }) {
-    return (
-        <>
-            <ul className="task-list">
-                {tasks.map((item, index) => (
-          <><h2>Completed Tasks</h2>
-        <li>
+function CompletedTaskList({ tasks }) {
+  return (
+    <ul className="task-list">
+      {tasks.map((item, index) => (
+        <li key={index} className="task-item completed">
           {item}
-          <div>
-            <button onClick={() => onDelete(index)}>Delete</button>
-          </div>
-                </li>
-                </>
+        </li>
       ))}
-            </ul>
-        </>
+    </ul>
   );
 }
 
-export default TaskList;
+export default CompletedTaskList;
