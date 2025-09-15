@@ -1,13 +1,30 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import AddTasks from "./components/AddTasks";
 import TaskList from "./components/TaskList";
 import CompletedTaskList from "./components/CompletedTaskList";
 import "./App.css";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-  const [completedTasks, setCompletedTasks] = useState([]);
+ const [tasks, setTasks] = useState(() => {
+    return JSON.parse(localStorage.getItem("tasks")) || [];
+ });
+  
+  const [completedTasks, setCompletedTasks] = useState(() => {
+    return JSON.parse(localStorage.getItem("completedTasks")) || [];
+  });
+
   const [showCompleted, setShowCompleted] = useState(false);
+
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+ 
+  useEffect(() => {
+    localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
+  }, [completedTasks]);
+
 
   // add new task
   const addTask = (task) => {
