@@ -1,0 +1,22 @@
+.profile_card{
+    background-color: rgb(197, 197, 197);
+    width: 230px;
+    padding: 10px;
+    box-shadow: 1px 1px 10px 1px;
+}
+.card-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.profile_card:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+}
