@@ -11,7 +11,7 @@ import Contacts from './components/Contacts';
 function App() {
   return (
     <Router>
-      <nav className='bg-red-500 w-150 flex justify-evenly font-bold m-auto'>
+      <nav className='bg-red-500 w-150 flex justify-evenly font-bold mx-120 fixed '>
         <Link to='/'>Home</Link>
         <Link to='/about'>about</Link>
         <Link to='/contacts'>contacts</Link>
