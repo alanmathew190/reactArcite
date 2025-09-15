@@ -6,12 +6,10 @@ import Service from './components/Service';
 import Contacts from './components/Contacts';
 
 
-
-
 function App() {
   return (
     <Router>
-      <nav className='bg-red-500 w-150 flex justify-evenly font-bold mx-120 fixed '>
+      <nav className='bg-red-500 w-150 flex justify-evenly font-bold mx-120 fixed p-3.5 '>
         <Link to='/'>Home</Link>
         <Link to='/about'>about</Link>
         <Link to='/contacts'>contacts</Link>

@@ -54,8 +54,8 @@ function Contacts() {
   };
 
   return (
-      <div className='bg-blue-400 h-screen'>
-          <div className='bg-gray-200 w-150  mt-20 h-auto absolute left-120 text-center  p-20'>
+      <div className='bg-blue-100 h-screen'>
+          <div className='bg-gray-300 w-150  mt-20 h-auto absolute left-120 text-center  p-20'>
               <h1 className='text-3xl font-bold'>Contact Us</h1>
               <form action="" onSubmit={handleSubmit}>
                   <input type="text" name='name' value={formData.name}
