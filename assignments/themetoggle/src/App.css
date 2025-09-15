@@ -1,0 +1,19 @@
+.light {
+  background-color: white;
+  color: black;
+  width: 1535px;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+  width: 1535px;
+}
+
+.content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
