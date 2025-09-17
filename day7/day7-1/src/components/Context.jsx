@@ -10,11 +10,15 @@ function UserProvider({ children }) {
         name: "Alan",
         age:22
     })
+  let [count, setCount] = useState(0)
+  
+  let[darkMode,setDarkMode]=useState(false)
+
   return (
-      <userContext.Provider value={ user }>
-          {children}
+    <userContext.Provider value={[darkMode, setDarkMode]}>
+      {children}
     </userContext.Provider>
-  )
+  );
 }
 
 export default UserProvider
