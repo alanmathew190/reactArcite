@@ -1,10 +1,11 @@
 import React from 'react'
 import Child from './Child'
 
-function Parent() {
+function Parent({user1}) {
   return (
-      <div>
-          <Child  />
+    <div>
+      <p>{user1.age }</p>
+      <Child user1={ user1} />
     </div>
   )
 }

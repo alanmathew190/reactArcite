@@ -7,12 +7,17 @@ import ThemeToggle from './components/ThemeToggle';
 
 function App() {  
 
+   let [user, setUser] = useState({
+     name: "Alan",
+     age: 22,
+   });
 
   return (
-    <div className="bg-gray-600 text-white text-center">
+    <div className="bg-gray-900 text-white text-center">
       {/* <h1 className="text-4xl font-bold font-">Hello</h1> */}
       {/* <Parent />
       <Counter /> */}
+      {/* <Parent user1={ user} /> */}
       <ThemeToggle/>
 
     </div>

@@ -1,9 +1,10 @@
 import React from 'react'
 import GrandChild from './GrandChild'
 
-function Child() {
+function Child({user1}) {
   return (
-      <div>
+    <div>
+      <p>{ user1.name}</p>
           <GrandChild  />
     </div>
   )
