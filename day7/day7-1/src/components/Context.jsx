@@ -6,11 +6,11 @@ export const userContext = createContext();
 
 
 function UserProvider({ children }) {
-    let [user, setUser] = useState({
-        name: "Alan",
-        age:22
-    })
-  let [count, setCount] = useState(0)
+  //   let [user, setUser] = useState({
+  //       name: "Alan",
+  //       age:22
+  //   })
+  // let [count, setCount] = useState(0)
   
   let[darkMode,setDarkMode]=useState(false)
 
