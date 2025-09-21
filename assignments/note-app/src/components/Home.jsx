@@ -6,8 +6,8 @@ const Home = () => {
 
     return (
       <div className="bg-linear-to-r from-cyan-300 to-blue-300 h-screen">
-        <div className="p-4 border-white transform transition-transform duration-500 hover:scale-107 w-100 h-auto text-center rounded relative top-50 mx-auto shadow-lg shadow-cyan-500/50">
-          <h1 className="text-2xl font-bold mb-4">Welcome to My Notes App</h1>
+        <div className="p-20 bg-blue-300 border-white transform transition-transform duration-500 hover:scale-107 w-150 h-auto text-center rounded relative top-50 mx-auto shadow-lg shadow-cyan-500/50">
+          <h1 className="text-4xl font-bold mb-4">Welcome to My Notes App</h1>
 
           <button
             onClick={() => navigate("/notes")}

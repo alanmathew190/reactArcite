@@ -27,39 +27,38 @@ const NoteForm = () => {
   };
 
   return (
-    <div className="p-4 border w-100 h-auto text-center rounded mt-50 mx-auto">
-      <h2 className="text-xl font-bold mb-4">
-        {existingNote ? "Edit Note" : "Add Note"}
-      </h2>
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col gap-3"
-      >
-        <input
-          type="text"
-          placeholder="Heading"
-          value={heading}
-          onChange={(e) => setHeading(e.target.value)}
-          className="border p-2 rounded"
-          required
-        />
-        <textarea
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          className="border p-2 rounded"
-          rows="4"
-          required
-        />
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          {existingNote ? "Update Note" : "Add Note"}
-        </button>
-      </form>
+    <div className="bg-linear-to-r from-sky-300 to-blue-200 h-screen">
+      <div className="p-4 border-amber-400 border w-100 h-auto text-center rounded relative top-50 mx-auto shadow-lg shadow-cyan-500/50">
+        <h2 className="text-xl font-bold mb-4">
+          {existingNote ? "Edit Note" : "Add Note"}
+        </h2>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+          <input
+            type="text"
+            placeholder="Heading"
+            value={heading}
+            onChange={(e) => setHeading(e.target.value)}
+            className="border p-2 rounded bg-emerald-300 border-white placeholder:text-white"
+            required
+          />
+          <textarea
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="border p-2 rounded bg-purple-400  border-white placeholder:text-white"
+            rows="4"
+            required
+          />
+          <button
+            type="submit"
+            className="bg-blue-500 text-white px-4 py-2 rounded"
+          >
+            {existingNote ? "Update Note" : "Add Note"}
+          </button>
+        </form>
+      </div>
     </div>
   );
-};
+}
 
-export default NoteForm;
+export default NoteForm

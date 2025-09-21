@@ -7,8 +7,10 @@ const NoteItem = ({ note }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="border-white p-3 rounded shadow transform transition-transform duration-500 hover:scale-103 ">
-      <h3 className="font-bold">{note.heading}</h3>
+    <div className="border-white bg-amber-400 p-3 rounded shadow transform transition-transform duration-500 hover:scale-103 ">
+      <img src="/pin.png" alt="" className="relative w-10 h-10 left-75" />
+      {/* <img src="/pin.png" alt="" className="absolute w-10 h-10 top-10" /> */}
+      <h3 className="font-bold text-xl">{note.heading}</h3>
       <p>{note.description}</p>
       <div className="mt-2 flex gap-2">
         <button
