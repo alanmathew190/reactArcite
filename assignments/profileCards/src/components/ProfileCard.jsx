@@ -1,16 +1,41 @@
 import React from 'react'
 // import './profilecard.css'
 
-function ProfileCard({name,img,description}) {
+function ProfileCard() {
+
+    let profiles = [
+      {
+        id: 1,
+        name: "Alan Mathew",
+        img: "./src/assets/images/tom.jpeg",
+        description:
+          "Passionate about MERN stack development and problem solving.",
+      },
+      {
+        id: 1,
+        name: "Alan Mathew",
+        img: "./src/assets/images/tom.jpeg",
+        description:
+          "Passionate about MERN stack development and problem solving.",
+      },
+      {
+        id: 1,
+        name: "Alan Mathew",
+        img: "./src/assets/images/tom.jpeg",
+        description:
+          "Passionate about MERN stack development and problem solving.",
+      },
+    ];
     return (
-    
-            <div className="profile_card">
-                <img src={img} alt={name} />
-                <h1>{name}</h1>
-                <p>{description}</p>
-            </div>
-            
-  )
+      <div>
+        {profiles.map((prof) => (
+          <div>
+            <h1>{prof.name}</h1>
+            <img src={prof.img} alt="" />
+          </div>
+        ))}
+      </div>
+    );
 }
 
 export default ProfileCard

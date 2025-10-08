@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="card-container">
-    <ProfileCard
+    {/* <ProfileCard
         name="Alan Mathew"
         img="./src/assets/images/tom.jpeg"
         description="Passionate about MERN stack development and problem solving."
@@ -26,8 +26,8 @@ function App() {
         name="Levi Ackerman"
         img="./src/assets/images/levi.jpeg"
         description="Passionate about MERN stack development and problem solving."
-      />
-      </div>
+      /> */}
+<ProfileCard/>     </div>
   )
 }
 

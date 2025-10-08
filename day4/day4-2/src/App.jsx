@@ -8,6 +8,9 @@ function App() {
   let incrementCount = () => {
   setCount(count+1)
   }
+  let decrement = () => {
+    setCount(count-1)
+  }
 
   useEffect(() => {
     document.title=`hai ${count}`
@@ -19,7 +22,8 @@ function App() {
       
       <h1>COUNTER</h1>
         <h1>{count}</h1>
-        <button onClick={incrementCount}>+</button>
+      <button onClick={incrementCount}>+</button>
+      <button onClick={decrement}>-</button>
         
     </>
   )
