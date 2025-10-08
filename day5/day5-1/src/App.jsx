@@ -1,43 +1,39 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import AddTasks from "./components/AddTasks";
 import TaskList from "./components/TaskList";
 import CompletedTaskList from "./components/CompletedTaskList";
 import "./App.css";
 
 function App() {
- const [tasks, setTasks] = useState(() => {
+  const [tasks, setTasks] = useState(() => {
     return JSON.parse(localStorage.getItem("tasks")) || [];
- });
-  
+  });
+
   const [completedTasks, setCompletedTasks] = useState(() => {
     return JSON.parse(localStorage.getItem("completedTasks")) || [];
   });
 
   const [showCompleted, setShowCompleted] = useState(false);
 
-
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
- 
   useEffect(() => {
     localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
   }, [completedTasks]);
-
 
   // add new task
   const addTask = (task) => {
     setTasks([...tasks, task]);
   };
 
-  // delete active task
+  // delete task
   const deleteTask = (index) => {
-    const newTasks = tasks.filter((_, i) => i !== index);
-    setTasks(newTasks);
+    setTasks(tasks.filter((_, i) => i !== index));
   };
 
-  // mark active task as completed
+  // complete task
   const completeTask = (index) => {
     const taskToComplete = tasks[index];
     const newTasks = tasks.filter((_, i) => i !== index);
@@ -45,30 +41,47 @@ function App() {
     setCompletedTasks([...completedTasks, taskToComplete]);
   };
 
+  // edit task
+  const editTask = (index, newText) => {
+    const updated = [...tasks];
+    updated[index].text = newText;
+    setTasks(updated);
+  };
+
   return (
-    <div className="app">
-      <h1>To-Do List</h1>
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
+      <h1 className="text-4xl font-bold mb-6 text-blue-600">To-Do List</h1>
+
       <AddTasks onAdd={addTask} />
 
-      {/* toggle button */}
       <button
         onClick={() => setShowCompleted(!showCompleted)}
-        style={{ marginBottom: "20px" }}
+        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg mt-4"
       >
         {showCompleted ? "Hide Completed Tasks" : "Show Completed Tasks"}
       </button>
 
       {!showCompleted && (
         <>
-          <h2>Active Tasks</h2>
-          <TaskList tasks={tasks} onDelete={deleteTask} onComplete={completeTask} />
+          <h2 className="text-2xl mt-6 mb-2 text-gray-700">Active Tasks</h2>
+          <TaskList
+            tasks={tasks}
+            onDelete={deleteTask}
+            onComplete={completeTask}
+            onEdit={editTask}
+          />
         </>
       )}
 
       {showCompleted && (
         <>
-          <h2>Completed Tasks</h2>
-          <CompletedTaskList tasks={completedTasks} />
+          <h2 className="text-2xl mt-6 mb-2 text-gray-700">Completed Tasks</h2>
+          <CompletedTaskList
+            tasks={completedTasks}
+            onDelete={(index) => {
+              setCompletedTasks(completedTasks.filter((_, i) => i !== index));
+            }}
+          />
         </>
       )}
     </div>

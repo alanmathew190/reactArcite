@@ -1,7 +1,7 @@
 import React from 'react'
 // import './profilecard.css'
 
-function ProfileCard() {
+function ProfileCard({name}) {
 
     let profiles = [
       {
@@ -30,6 +30,7 @@ function ProfileCard() {
       <div>
         {profiles.map((prof) => (
           <div>
+            <h1>{ name}</h1>
             <h1>{prof.name}</h1>
             <img src={prof.img} alt="" />
           </div>

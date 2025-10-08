@@ -12,15 +12,13 @@ function App() {
   };
 
   const deleteTask = (index) => {
-    setTasks(tasks.filter((_, i) => i !== index));
+    setTasks(tasks.filter((_, i) => i !==index));
   }
   const completedToggle = (index) => {
-    setTasks(tasks.filter((t, i) => i !== index))
+    setTasks(tasks.filter((_, i) => i !== index))
     setCompletedTasks([...completedTasks,tasks[index]])
   };
-  const showCompleted = () => {
-    
-  }
+ 
 
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
@@ -28,21 +26,21 @@ function App() {
       <input
         type="text"
         value={task}
-        onChange={(e) => setTask(e.target.value)}
+        onChange={(e) => setTask(e.target.value)}           
         placeholder="Enter task"
       />
-      <button onClick={() => addTask()}>Add</button>
+      <button onClick={ addTask}>Add</button>
 
-      {tasks.map((t, index) => (
+      {tasks.map((task, index) => (
         <div>
           <p>
-            {t} <button onClick={() => deleteTask(index)}>Delete</button>
-            <button onClick={() => completedToggle(index)}>completed</button>
+            {task} <button onClick={() => deleteTask(index)}>Delete</button>
+            {/* <button onClick={() => completedToggle(index)}>completed</button> */}
           </p>
           {/* <button onClick={()=>}></button> */}
-          <h1>completedTasks</h1>
+          {/* <h1>completedTasks</h1> */}
 
-          <p>{completedTasks}</p>
+          {/* <p>{completedTasks}</p> */}
         </div>
       ))}
     </div>

@@ -4,7 +4,9 @@ import ProfileCard from './components/ProfileCard'
 import './Profilecard.css'
 
 function App() {
+   
 
+  let name = "Vijay";
   return (
     <div className="card-container">
     {/* <ProfileCard
@@ -27,7 +29,7 @@ function App() {
         img="./src/assets/images/levi.jpeg"
         description="Passionate about MERN stack development and problem solving."
       /> */}
-<ProfileCard/>     </div>
+      <ProfileCard name={name } />     </div>
   )
 }
 
